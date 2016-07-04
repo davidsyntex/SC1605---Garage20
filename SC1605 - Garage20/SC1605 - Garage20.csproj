@@ -127,13 +127,38 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VehicleController.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Migrations\201607041113277_Changed model.cs" />
+    <Compile Include="Migrations\201607041113277_Changed model.Designer.cs">
+      <DependentUpon>201607041113277_Changed model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607041116495_Updated seed-method.cs" />
+    <Compile Include="Migrations\201607041116495_Updated seed-method.Designer.cs">
+      <DependentUpon>201607041116495_Updated seed-method.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607041132108_DataType added to Dates.cs" />
+    <Compile Include="Migrations\201607041132108_DataType added to Dates.Designer.cs">
+      <DependentUpon>201607041132108_DataType added to Dates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\VehicleRepository.cs" />
+    <Compile Include="DataAccessLayer\VehicleContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607040851411_Initial.cs" />
+    <Compile Include="Migrations\201607040851411_Initial.Designer.cs">
+      <DependentUpon>201607040851411_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Vehicles.mdf" />
+    <Content Include="App_Data\Vehicles_log.ldf">
+      <DependentUpon>Vehicles.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -178,18 +203,31 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Vehicle\Create.cshtml" />
+    <Content Include="Views\Vehicle\Delete.cshtml" />
+    <Content Include="Views\Vehicle\Details.cshtml" />
+    <Content Include="Views\Vehicle\Edit.cshtml" />
+    <Content Include="Views\Vehicle\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <EmbeddedResource Include="Migrations\201607040851411_Initial.resx">
+      <DependentUpon>201607040851411_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607041113277_Changed model.resx">
+      <DependentUpon>201607041113277_Changed model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607041116495_Updated seed-method.resx">
+      <DependentUpon>201607041116495_Updated seed-method.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607041132108_DataType added to Dates.resx">
+      <DependentUpon>201607041132108_DataType added to Dates.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
